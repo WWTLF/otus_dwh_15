@@ -1,18 +1,18 @@
 name: jaffle_shop_dbtvault
 profile: jaffle_shop
 version: '0.1.0'
-require-dbt-version: ['>=0.18.0', '<0.20.0']
+require-dbt-version: ['>=1.8.0', '<1.20.0']
 config-version: 2
 
 analysis-paths:
   - analysis
 clean-targets:
   - target
-data-paths:
+seed-paths:
   - data
 macro-paths:
   - macros
-source-paths:
+model-paths:
   - models
 test-paths:
   - tests
@@ -42,4 +42,10 @@ models:
           - 'link'
       sats:
         tags:
-          - 'satellite'
+          - 'satellite'            
+    marts:
+      tags:
+        - 'marts'
+    business_vault:
+      tags:
+        - 'bv'
